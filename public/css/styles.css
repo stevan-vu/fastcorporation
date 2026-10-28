@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Pinned to the top so the centered page layout isn't affected */
+nav.menu {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Logout is a POST form; make its button read like the other menu links */
+.logout-form {
+    display: inline;
+}
+
+.logout-form button {
+    padding: 0;
+    font: inherit;
+    color: LinkText;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#form-container {
+    width: 100%;
+    max-width: 360px;
+    margin: 16px;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+#form-container h1 {
+    margin: 0 0 24px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-container label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#form-container input {
+    margin-bottom: 16px;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+#form-container input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+#form-container button {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #2563eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#form-container button:hover {
+    background: #1d4ed8;
+}
+
+.error {
+    margin: 0 0 16px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+}
+
+.hint {
+    margin: 16px 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.hint a {
+    color: #2563eb;
+}
+
+#stats-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 16px;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+#stats-container h1 {
+    margin: 0 0 24px;
+    font-size: 24px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.filters label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.filters input,
+.filters select {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.filters button {
+    padding: 9px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: #2563eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background: #1d4ed8;
+}
+
+.filters a {
+    padding: 9px 4px;
+    font-size: 14px;
+    color: #2563eb;
+}
+
+.count {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.pagination {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+th {
+    font-weight: 600;
+    background: #f9fafb;
+}
+
+.muted {
+    color: #9ca3af;
+}
+
+/* Report chart (drawn by Chart.js); series colors follow a fixed order so each metric keeps its color */
+.chart {
+    --series-1: #2a78d6;
+    --series-2: #eb6834;
+    --series-3: #1baf7a;
+    --series-4: #eda100;
+    margin: 0 0 24px;
+}
+
+.chart figcaption {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Chart.js needs a sized, relatively positioned parent to be responsive */
+.chart-plot {
+    position: relative;
+    height: 300px;
+}
+
+td.num,
+th.num {
+    text-align: right;
+}
