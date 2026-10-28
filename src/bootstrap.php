@@ -9,7 +9,7 @@ $dbname   = getenv('MYSQL_DATABASE');
 $username = getenv('MYSQL_USER');
 $password = getenv('MYSQL_PASSWORD');
 
-
+// Use Auryn for automatic dependency resolution instead of a custom DI container.
 $injector = new Auryn\Injector;
 // Classes that ask for an Injector (the Router) get this configured instance, not a new empty one
 $injector->share($injector);
